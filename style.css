@@ -522,7 +522,9 @@ html[data-theme='light'] .bulb .base {
 }
 
 .profile-chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: #28c840;
@@ -530,6 +532,37 @@ html[data-theme='light'] .bulb .base {
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
   margin-bottom: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-chip:hover {
+  border-color: #28c840;
+}
+
+.profile-chip.working {
+  color: var(--accent);
+  border-color: rgba(92, 225, 230, 0.55);
+}
+
+.profile-chip.working:hover {
+  border-color: var(--accent);
+}
+
+.profile-chip.working .status-dot {
+  background: var(--accent);
+  animation-name: status-ping-accent;
+}
+
+.profile-chip .status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.profile-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .profile-meta {

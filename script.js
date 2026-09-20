@@ -137,10 +137,9 @@ if (statsStrip) {
   statsObserver.observe(statsStrip);
 }
 
-const statusChip = document.querySelector('#statusChip');
+const statusChips = document.querySelectorAll('.status-chip, .profile-chip');
 
-if (statusChip) {
-  const statusText = document.querySelector('#statusText');
+if (statusChips.length) {
   const savedStatus = (() => {
     try {
       return localStorage.getItem('availability') || 'open';
@@ -152,9 +151,18 @@ if (statusChip) {
 
   function renderStatus() {
     const isOpen = availability === 'open';
-    statusChip.classList.toggle('working', !isOpen);
-    statusText.textContent = isOpen ? 'Open to work' : 'Currently working at Perficient';
-    statusChip.setAttribute('aria-pressed', isOpen ? 'true' : 'false');
+    statusChips.forEach((chip) => {
+      chip.classList.toggle('working', !isOpen);
+      chip.setAttribute('aria-pressed', isOpen ? 'true' : 'false');
+    });
+    const heroText = document.querySelector('#statusText');
+    if (heroText) {
+      heroText.textContent = isOpen ? 'Open to work' : 'Currently working at Perficient';
+    }
+    const profileText = document.querySelector('#profileChipText');
+    if (profileText) {
+      profileText.textContent = isOpen ? 'Open to opportunities' : 'Working at Perficient';
+    }
     try {
       localStorage.setItem('availability', availability);
     } catch (e) {
@@ -167,12 +175,14 @@ if (statusChip) {
     renderStatus();
   }
 
-  statusChip.addEventListener('click', toggleStatus);
-  statusChip.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleStatus();
-    }
+  statusChips.forEach((chip) => {
+    chip.addEventListener('click', toggleStatus);
+    chip.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleStatus();
+      }
+    });
   });
   renderStatus();
 }
