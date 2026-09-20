@@ -399,27 +399,40 @@ html[data-theme='light'] .bulb .base {
 .status-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.25rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
+  gap: 0.7rem;
+  margin-top: 1.75rem;
+  padding: 0.75rem 1.35rem;
+  border: 1px solid rgba(40, 200, 64, 0.55);
   border-radius: 999px;
   background: var(--surface);
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text);
   cursor: pointer;
   user-select: none;
-  transition: border-color 0.3s ease, color 0.3s ease, background 0.45s ease;
+  box-shadow: 0 0 0 0 rgba(40, 200, 64, 0.25), 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.45s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .status-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(40, 200, 64, 0.35), 0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+.status-chip.working {
   border-color: var(--accent);
+  box-shadow: 0 0 0 0 rgba(92, 225, 230, 0.25), 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.status-chip.working:hover {
+  box-shadow: 0 0 22px rgba(92, 225, 230, 0.35), 0 10px 26px rgba(0, 0, 0, 0.3);
 }
 
 .status-dot {
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: #28c840;
   box-shadow: 0 0 0 0 rgba(40, 200, 64, 0.5);
@@ -428,8 +441,8 @@ html[data-theme='light'] .bulb .base {
 }
 
 @keyframes status-ping {
-  0% { box-shadow: 0 0 0 0 rgba(40, 200, 64, 0.45); }
-  70% { box-shadow: 0 0 0 8px rgba(40, 200, 64, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(40, 200, 64, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(40, 200, 64, 0); }
   100% { box-shadow: 0 0 0 0 rgba(40, 200, 64, 0); }
 }
 
@@ -439,9 +452,14 @@ html[data-theme='light'] .bulb .base {
 }
 
 @keyframes status-ping-accent {
-  0% { box-shadow: 0 0 0 0 rgba(92, 225, 230, 0.45); }
-  70% { box-shadow: 0 0 0 8px rgba(92, 225, 230, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(92, 225, 230, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(92, 225, 230, 0); }
   100% { box-shadow: 0 0 0 0 rgba(92, 225, 230, 0); }
+}
+
+.status-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* ---------- Back to top ---------- */
