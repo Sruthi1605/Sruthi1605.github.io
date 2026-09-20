@@ -6,7 +6,7 @@ Pages in minutes.
 
 ## Files
 
-- `index.html` — main page (hero, projects, about, stack, honors & certifications, contact)
+- `index.html` — main page (hero, about, projects, stack, honors & certifications, contact)
 - `style.css` — dark/light themes, animations, case-study page styles
 - `script.js` — theme toggle, animated counters, scroll progress, typewriter, status chip, back-to-top, scroll reveals
 - `case-studies/` — 4 detailed project pages, linked from `index.html`:
