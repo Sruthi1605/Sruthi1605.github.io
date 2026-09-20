@@ -19,8 +19,6 @@
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress"></div>
-  <canvas id="cursor-trail" aria-hidden="true"></canvas>
-  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
   <header class="nav">
     <a class="nav-logo" href="#home">SG<span class="accent">.</span></a>
     <nav class="nav-links">
@@ -112,24 +110,16 @@
         </ul>
         <p class="about-cta">Languages: English · Tamil · Hindi (Basic)</p>
       </div>
-      <div class="terminal" aria-label="Terminal showing fun facts about Sruthi">
-        <div class="terminal-bar">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="terminal-title">sruthi@portfolio:~</span>
-        </div>
-        <div class="terminal-body">
-          <p class="term-line"><span class="prompt">$</span> whoami</p>
-          <p class="out term-line">Sruthi G — Software Engineer @ Perficient</p>
-          <p class="term-line"><span class="prompt">$</span> cat current_status.txt</p>
-          <p class="out term-line">Learning product dev · open to opportunities</p>
-          <p class="term-line"><span class="prompt">$</span> skills --top</p>
-          <p class="out term-line">Python · Java · React · SQL · PyTorch</p>
-          <p class="term-line"><span class="prompt">$</span> hobbies</p>
-          <p class="out term-line">"Everything except hitting my head twice"</p>
-          <p class="term-line"><span class="prompt">$</span>&nbsp;<span class="caret"></span></p>
-        </div>
+      <div class="profile-card" aria-label="Quick profile">
+        <div class="profile-initials">SG</div>
+        <p class="profile-name">Sruthi G</p>
+        <p class="profile-role">Associate Technology Consultant · Perficient</p>
+        <span class="profile-chip">● Open to opportunities</span>
+        <ul class="profile-meta">
+          <li><span class="meta-label">Location</span><span>Chennai, India</span></li>
+          <li><span class="meta-label">Email</span><span>sruthiganesh05@gmail.com</span></li>
+          <li><span class="meta-label">GitHub</span><a href="https://github.com/Sruthi1605" target="_blank">@Sruthi1605</a></li>
+        </ul>
       </div>
     </div>
   </section>

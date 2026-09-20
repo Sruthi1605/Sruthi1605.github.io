@@ -1,13 +1,14 @@
 # Portfolio
 
 A dependency-free, single-page developer portfolio with case-study pages, a
-dynamic resume PDF, and subtle animations. Deploy to GitHub Pages in minutes.
+downloadable resume, and a clean, subdued motion design. Deploy to GitHub
+Pages in minutes.
 
 ## Files
 
 - `index.html` — main page (hero, about, projects, skills, experience, achievements, certifications, contact)
 - `style.css` — dark/light themes, animations, case-study page styles
-- `script.js` — theme toggle, animated counters, confetti, scroll progress, typewriter, cursor trail, scroll reveals
+- `script.js` — theme toggle, animated counters, scroll progress, typewriter, status chip, back-to-top, scroll reveals
 - `case-studies/` — 4 detailed project pages, linked from `index.html`:
   - `sepsis-early-warning.html`
   - `fall-detection.html`
@@ -25,7 +26,7 @@ dynamic resume PDF, and subtle animations. Deploy to GitHub Pages in minutes.
 | Project descriptions | fine-tune wording under each project card |
 | Case study content | edit files in `case-studies/` to match your exact work |
 | Resume PDF | copy your own resume into the project root as `resume.pdf` |
-| Live terminal lines | the terminal card in the About section of `index.html` |
+| Status chip | the "Open to work / Working" pill in the hero toggles and persists |
 
 ## Adding your resume
 
