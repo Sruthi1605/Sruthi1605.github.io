@@ -330,6 +330,21 @@ html[data-theme='light'] .bulb .base {
   color: var(--muted);
 }
 
+.hero-seeking {
+  max-width: 560px;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--text);
+  border-left: 2px solid var(--accent);
+  padding: 0.15rem 0 0.15rem 0.85rem;
+}
+
+.hero-seeking strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .hero-actions {
   margin-top: 2.5rem;
   display: flex;
