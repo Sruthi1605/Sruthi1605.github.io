@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Messaging via Steganography · Case Study · Sruthi G</title>
+  <meta name="description" content="Case study: a secure messaging tool that hides AES-encrypted text inside images using LSB steganography." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="cursor-trail" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <header class="nav">
+    <a class="nav-logo" href="../index.html">SG<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact" class="btn btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cs-hero">
+    <a class="cs-back" href="../index.html#projects">← Back to portfolio</a>
+    <h1 class="cs-title">Secure Messaging via Steganography</h1>
+    <p class="cs-sub">
+      A messaging tool that hides AES-encrypted messages inside ordinary image
+      files — so the message travels as a normal-looking picture.
+    </p>
+    <div class="cs-meta">
+      <span class="cs-tag">Security</span>
+      <span>2024</span>
+      <span>Cryptography</span>
+    </div>
+    <ul class="cs-stack">
+      <li>Python</li>
+      <li>AES</li>
+      <li>LSB Steganography</li>
+      <li>HTML / CSS</li>
+    </ul>
+  </section>
+
+  <div class="cs-content">
+    <section class="cs-section reveal">
+      <h2><span class="num">01.</span> Overview</h2>
+      <p>
+        Encrypted messages still look suspicious — an intercepted ciphertext
+        is an obvious "something is hidden here" signal. Steganography solves
+        that by hiding the secret in plain sight.
+      </p>
+      <p>
+        I built a tool where a user encrypts a message and hides it inside an
+        image; the recipient extracts and decrypts it. On the outside, it's
+        just a picture.
+      </p>
+      <div class="cs-fact">
+        "Cryptography protects the message if it's found. Steganography tries
+        to make sure it's never found at all."
+      </div>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">02.</span> The Problem</h2>
+      <ul>
+        <li>Visible ciphertext invites interception and blocking.</li>
+        <li>Sending secrets over chat apps leaves traces on the wire and on servers.</li>
+        <li>A practical secure channel should look completely ordinary.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">03.</span> My Role &amp; Approach</h2>
+      <ul>
+        <li>Encrypted the message with <strong>AES</strong> before hiding it, so the embedded data is already unreadable.</li>
+        <li>Used <strong>LSB (Least Significant Bit) steganography</strong> to embed the encrypted bytes into pixel data with minimal visual change to the image.</li>
+        <li>Built the user interface so anyone can pick a message, upload a carrier image, and get a hidden image to share.</li>
+        <li>Implemented the decoder to extract and decrypt the message back to its original text.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">04.</span> Key Challenges</h2>
+      <ul>
+        <li><strong>Capacity vs. invisibility:</strong> more hidden bits means more distortion — balanced payload size against detectable artifacts.</li>
+        <li><strong>Integrity:</strong> ensured hidden data survives image encoding/decoding without corruption.</li>
+        <li><strong>UX:</strong> wrapped a crypto + stego pipeline in a clean interface a non-technical user can operate.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">05.</span> Results &amp; Impact</h2>
+      <ul>
+        <li>End-to-end secure messaging: encrypt → hide → share → extract → decrypt.</li>
+        <li>Owned the frontend interface plus the AES encryption and image-embedding implementation.</li>
+        <li>A practical taste of building security features into a real application.</li>
+      </ul>
+    </section>
+
+    <div class="cs-cta">
+      <h3>Want the details?</h3>
+      <p>Happy to discuss the encoding scheme and security trade-offs in a call or email.</p>
+      <div class="cs-cta-links">
+        <a class="btn btn-primary" href="https://github.com/Sruthi1605/Steganography-Tool">View Code on GitHub ↗</a>
+        <a class="btn" href="mailto:sruthiganesh05@gmail.com">sruthiganesh05@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Sruthi G · <a href="../index.html">Back to portfolio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fall Detection System · Case Study · Sruthi G</title>
+  <meta name="description" content="Case study: a deep learning fall detection system using YOLOv5 and ResNet50, 87% accurate on the LE2I dataset." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="cursor-trail" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <header class="nav">
+    <a class="nav-logo" href="../index.html">SG<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact" class="btn btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cs-hero">
+    <a class="cs-back" href="../index.html#projects">← Back to portfolio</a>
+    <h1 class="cs-title">Fall Detection System</h1>
+    <p class="cs-sub">
+      A deep learning system that detects and categorizes human falls from RGB
+      camera video — 87% accuracy on the LE2I dataset.
+    </p>
+    <div class="cs-meta">
+      <span class="cs-tag">Featured · Deep Learning</span>
+      <span>2025</span>
+      <span>Computer Vision</span>
+    </div>
+    <ul class="cs-stack">
+      <li>Python</li>
+      <li>PyTorch</li>
+      <li>YOLOv5</li>
+      <li>ResNet50</li>
+    </ul>
+  </section>
+
+  <div class="cs-content">
+    <section class="cs-section reveal">
+      <h2><span class="num">01.</span> Overview</h2>
+      <p>
+        Falls are one of the leading causes of injury for older adults, and the
+        damage worsens the longer help takes to arrive. The goal was a vision
+        system that watches live video, detects the moment of a fall, and tells
+        a caregiver how severe it is.
+      </p>
+      <p>
+        I trained a detection + classification pipeline that takes RGB video
+        frames and outputs both <em>whether</em> a fall happened and its
+        severity level.
+      </p>
+      <div class="cs-fact">
+        "The aim wasn't just to notice a fall — it was to categorize it, so
+        responders know how urgent the situation is before they arrive."
+      </div>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">02.</span> The Problem</h2>
+      <ul>
+        <li>Falls are rare, fast, and visually similar to normal activities (sitting down, bending over).</li>
+        <li>Cameras only give RGB video — no depth, skeleton joints, or wearables to fall back on.</li>
+        <li>Automated monitors must not overwhelm caretakers with false alarms.</li>
+        <li>Severity varies — a slip differs from a collapse — and responders need to prioritize.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">03.</span> My Role &amp; Approach</h2>
+      <ul>
+        <li>Used <strong>YOLOv5</strong> for person detection and tracking across frames to isolate the subject.</li>
+        <li>Extracted motion and posture features and passed them through <strong>ResNet50</strong> for fall classification.</li>
+        <li>Trained on the <strong>LE2I fall dataset</strong> with augmentations to handle real-world variability.</li>
+        <li>Built multi-class output that separates falls by severity: mild, moderate, severe.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">04.</span> Key Challenges</h2>
+      <ul>
+        <li><strong>Ambiguity:</strong> distinguishing "falling" from "lying down" required temporal context, not single frames.</li>
+        <li><strong>Imbalance:</strong> fall samples were sparse relative to normal activity — used data balancing and augmentation.</li>
+        <li><strong>Severity grading:</strong> mapped continuous movement patterns into three clinically meaningful buckets.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">05.</span> Results &amp; Impact</h2>
+      <ul>
+        <li>Achieved <strong>87% accuracy</strong> on the LE2I dataset.</li>
+        <li>Classified fall severity into mild, moderate, and severe.</li>
+        <li>Proved the approach works on plain RGB video — no wearables or special sensors required.</li>
+      </ul>
+    </section>
+
+    <div class="cs-cta">
+      <h3>Want the details?</h3>
+      <p>Happy to discuss the model architecture, data pipeline, and evaluation in a call or email.</p>
+      <a class="btn btn-primary" href="mailto:sruthiganesh05@gmail.com">sruthiganesh05@gmail.com</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Sruthi G · <a href="../index.html">Back to portfolio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

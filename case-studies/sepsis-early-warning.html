@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sepsis Early Warning System · Case Study · Sruthi G</title>
+  <meta name="description" content="Case study: dual-expert Mixture of Experts model for early sepsis prediction with LLM-powered explanations." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="cursor-trail" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <header class="nav">
+    <a class="nav-logo" href="../index.html">SG<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact" class="btn btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cs-hero">
+    <a class="cs-back" href="../index.html#projects">← Back to portfolio</a>
+    <h1 class="cs-title">Sepsis Early Warning System</h1>
+    <p class="cs-sub">
+      A dual-expert Mixture of Experts model that flags sepsis risk early from
+      multivariate time-series vitals and explains its reasoning with an LLM.
+    </p>
+    <div class="cs-meta">
+      <span class="cs-tag">Featured · AI Research</span>
+      <span>2026</span>
+      <span>Blood Sciences / Healthcare ML</span>
+    </div>
+    <ul class="cs-stack">
+      <li>Python</li>
+      <li>PatchTST</li>
+      <li>Mixture of Experts</li>
+      <li>Time-Series Modeling</li>
+      <li>LLM</li>
+    </ul>
+  </section>
+
+  <div class="cs-content">
+    <section class="cs-section reveal">
+      <h2><span class="num">01.</span> Overview</h2>
+      <p>
+        Sepsis is a life-threatening condition where the body's response to
+        infection damages its own organs. Every hour of delayed treatment
+        measurably lowers survival odds — so the goal was not "predict sepsis
+        accurately" but "predict it early enough to act."
+      </p>
+      <p>
+        I designed a dual-expert <strong>Mixture of Experts (MoE)</strong>
+        model that reads continuous patient vitals and flags early risk before
+        clinical deterioration becomes obvious.
+      </p>
+      <div class="cs-fact">
+        "Accuracy matters, but for sepsis the most important metric is lead
+        time — hours saved when a model can beat routine observation."
+      </div>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">02.</span> The Problem</h2>
+      <ul>
+        <li>Sepsis signs are subtle early on and easy to miss in busy wards.</li>
+        <li>Patient data is multivariate time-series: vitals, labs, and demographics at irregular intervals.</li>
+        <li>Class imbalance — sepsis events are rare relative to normal patient-months.</li>
+        <li>Doctors didn't just need a risk score; they needed to understand <em>why</em>.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">03.</span> My Role &amp; Approach</h2>
+      <ul>
+        <li>Worked on the time-series modelling component using <strong>PatchTST</strong> and <strong>PyTorch</strong>.</li>
+        <li>Prepared multivariate patient data for temporal learning and built the prediction pipeline.</li>
+        <li>Contributed to the dual-expert <strong>Mixture of Experts</strong> design that combines temporal patterns with clinical characteristics.</li>
+        <li>Integrated an explainable risk component: an <strong>LLM</strong> that generates interpretable explanations alongside each prediction for decision support.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">04.</span> Key Challenges</h2>
+      <ul>
+        <li><strong>Irregular sampling:</strong> vitals arrive at uneven intervals — had to align and impute without losing signal.</li>
+        <li><strong>Imbalance:</strong> boosted minority-class attention so early-risk frames weren't treated as noise.</li>
+        <li><strong>Interpretability:</strong> an MoE is powerful but opaque; the LLM layer made the output actionable, not just a number.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">05.</span> Results &amp; Impact</h2>
+      <ul>
+        <li>Early risk detection with severity classification across mild / moderate / severe.</li>
+        <li>Interpretable risk explanations for every prediction to support clinical decision-making.</li>
+        <li>A reusable time-series + LLM pipeline pattern I can adapt to other healthcare monitoring problems.</li>
+      </ul>
+    </section>
+
+    <div class="cs-cta">
+      <h3>Want the details?</h3>
+      <p>Happy to walk through the architecture and trade-offs in a call or email.</p>
+      <a class="btn btn-primary" href="mailto:sruthiganesh05@gmail.com">sruthiganesh05@gmail.com</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Sruthi G · <a href="../index.html">Back to portfolio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

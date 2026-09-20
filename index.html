@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sruthi G · Aspiring Software Engineer</title>
+  <meta name="description" content="Portfolio of Sruthi G, Aspiring Software Engineer and Associate Technology Consultant at Perficient." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="cursor-trail" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <header class="nav">
+    <a class="nav-logo" href="#home">SG<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#certifications">Certifications</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode" aria-pressed="false">
+        <span class="halo" aria-hidden="true"></span>
+        <svg class="bulb" viewBox="0 0 24 24" aria-hidden="true">
+          <circle class="glass" cx="12" cy="9.5" r="6.5" />
+          <path class="filament" d="M9.5 13.5c.2 1 .6 1.7 1 2.2h3c.4-.5.8-1.2 1-2.2" />
+          <rect class="base" x="9.6" y="16" width="4.8" height="1.8" rx="0.6" />
+          <rect class="base" x="9" y="18" width="6" height="1.6" rx="0.6" />
+        </svg>
+      </button>
+      <a href="#contact" class="btn btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <p class="hero-kicker">Hi, my name is</p>
+    <h1 class="hero-name">Sruthi G<span class="accent">.</span></h1>
+    <h2 class="hero-tagline">Aspiring Software Engineer · Java · Python · Web Development</h2>
+    <p class="hero-desc">
+      I'm an <strong>Associate Technology Consultant at Perficient</strong>,
+      working on the <strong>production development team</strong>. I completed my
+      B.E. in Computer Science at MIT, Anna University, and I'm passionate about
+      building reliable applications and AI-driven solutions that solve
+      meaningful problems.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="mailto:sruthiganesh05@gmail.com" class="btn">Say Hello</a>
+      <a href="resume.pdf" class="btn" download>⬇ Resume</a>
+    </div>
+    <div class="status-chip" id="statusChip" role="button" tabindex="0" title="Click to toggle your availability status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="status-text" id="statusText">Open to work</span>
+    </div>
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  </section>
+
+  <!-- TECH MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><i>◆</i><span>Java</span><i>◆</i><span>JavaScript</span><i>◆</i><span>React</span><i>◆</i><span>SQL</span><i>◆</i><span>MySQL</span><i>◆</i><span>MongoDB</span><i>◆</i><span>PyTorch</span><i>◆</i><span>YOLOv5</span><i>◆</i><span>PatchTST</span><i>◆</i><span>Git</span><i>◆</i><span>Figma</span><i>◆</i>
+      <span>Python</span><i>◆</i><span>Java</span><i>◆</i><span>JavaScript</span><i>◆</i><span>React</span><i>◆</i><span>SQL</span><i>◆</i><span>MySQL</span><i>◆</i><span>MongoDB</span><i>◆</i><span>PyTorch</span><i>◆</i><span>YOLOv5</span><i>◆</i><span>PatchTST</span><i>◆</i><span>Git</span><i>◆</i><span>Figma</span><i>◆</i>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title"><span class="num">01.</span> About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm an aspiring software engineer based in <strong>Chennai</strong>,
+          currently starting my career as an Associate Technology Consultant at
+          <strong>Perficient</strong>, part of the production development team.
+          I hold a B.E. in Computer Science and Engineering from
+          <strong>MIT, Anna University</strong> with a CGPA of 9.04.
+        </p>
+        <p>
+          I love building things end to end — from understanding the problem to
+          designing and shipping the solution. My project work spans full-stack
+          web apps and AI/deep-learning systems. Each project here includes a
+          case study of what I did and what it achieved.
+        </p>
+        <p>
+          Outside work I volunteer with the <strong>Youth Red Cross</strong> and
+          enjoy music, crafting, and reading.
+        </p>
+        <p>
+          I'm eager to contribute in agile, fast-paced teams that value
+          innovation, collaboration, and continuous learning.
+        </p>
+        <p class="about-cta">Core concepts I work with:</p>
+        <ul class="tech-list">
+          <li>Data Structures &amp; Algorithms</li>
+          <li>Machine Learning</li>
+          <li>Operating Systems</li>
+          <li>Computer Networks</li>
+          <li>DBMS &amp; Software Engineering</li>
+          <li>Agile</li>
+        </ul>
+        <p class="about-cta">Languages: English · Tamil · Hindi (Basic)</p>
+      </div>
+      <div class="terminal" aria-label="Terminal showing fun facts about Sruthi">
+        <div class="terminal-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">sruthi@portfolio:~</span>
+        </div>
+        <div class="terminal-body">
+          <p class="term-line"><span class="prompt">$</span> whoami</p>
+          <p class="out term-line">Sruthi G — Software Engineer @ Perficient</p>
+          <p class="term-line"><span class="prompt">$</span> cat current_status.txt</p>
+          <p class="out term-line">Learning prod dev · open to opportunities</p>
+          <p class="term-line"><span class="prompt">$</span> skills --top</p>
+          <p class="out term-line">Python · Java · React · SQL · PyTorch</p>
+          <p class="term-line"><span class="prompt">$</span> hobbies</p>
+          <p class="out term-line">"Everything except hitting my head twice"</p>
+          <p class="term-line"><span class="prompt">$</span>&nbsp;<span class="caret"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="section-title"><span class="num">02.</span> Featured Projects</h2>
+    <p class="section-sub">
+      AI/research builds and full-stack apps from my academic journey — each
+      one has a case study with the problem, my role, and the results.
+    </p>
+
+    <article class="project-card reveal">
+      <div class="project-meta">
+        <span class="project-tag">Featured · AI Research</span>
+        <span class="project-year">2026</span>
+      </div>
+      <h3 class="project-title">Sepsis Early Warning System</h3>
+      <p class="project-desc">
+        Built the time-series prediction pipeline (PatchTST + PyTorch) for a
+        dual-expert Mixture of Experts system that flags early sepsis risk, and
+        integrated an LLM module for interpretable risk explanations.
+      </p>
+      <ul class="project-stack">
+        <li>Python</li>
+        <li>PatchTST</li>
+        <li>Time-Series Modeling</li>
+        <li>LLM</li>
+      </ul>
+      <div class="project-links">
+        <a href="case-studies/sepsis-early-warning.html" aria-label="Case study">Case Study →</a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-meta">
+        <span class="project-tag">Featured · Deep Learning</span>
+        <span class="project-year">2025</span>
+      </div>
+      <h3 class="project-title">Fall Detection System</h3>
+      <p class="project-desc">
+        Trained a deep learning model to detect and categorize human falls from
+        RGB video input. Achieved <strong>87% accuracy</strong> on the LE2I
+        dataset and classified fall severity into mild, moderate, and severe.
+      </p>
+      <ul class="project-stack">
+        <li>Python</li>
+        <li>PyTorch</li>
+        <li>YOLOv5</li>
+        <li>ResNet50</li>
+      </ul>
+      <div class="project-links">
+        <a href="case-studies/fall-detection.html" aria-label="Case study">Case Study →</a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-meta">
+        <span class="project-tag">Full-Stack</span>
+        <span class="project-year">2024</span>
+      </div>
+      <h3 class="project-title">Collaborative Code Editor</h3>
+      <p class="project-desc">
+        Designed and built the frontend of a real-time collaborative editor —
+        integrated Monaco Editor with syntax highlighting and built the UI
+        components — while WebSocket keeps sessions synchronized.
+      </p>
+      <ul class="project-stack">
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>WebSocket</li>
+        <li>Monaco Editor</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://github.com/Sruthi1605/Collaborative-Code-Editor" aria-label="View source on GitHub">GitHub</a>
+        <a href="case-studies/collaborative-code-editor.html" aria-label="Case study">Case Study →</a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-meta">
+        <span class="project-tag">Security</span>
+        <span class="project-year">2024</span>
+      </div>
+      <h3 class="project-title">Secure Messaging via Steganography</h3>
+      <p class="project-desc">
+        Built the user interface and the security pipeline that encrypts
+        messages with AES and embeds them inside images using LSB
+        steganography.
+      </p>
+      <ul class="project-stack">
+        <li>Python</li>
+        <li>AES</li>
+        <li>LSB Steganography</li>
+        <li>HTML / CSS</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://github.com/Sruthi1605/Steganography-Tool" aria-label="View source on GitHub">GitHub</a>
+        <a href="case-studies/secure-messaging.html" aria-label="Case study">Case Study →</a>
+      </div>
+    </article>
+
+    <p class="more-link"><a href="https://github.com/Sruthi1605" class="btn">View GitHub ↗</a></p>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats reveal" aria-label="Highlights">
+    <div class="stat">
+      <p class="stat-num" data-target="87" data-suffix="%">0%</p>
+      <p class="stat-label">Fall detection accuracy</p>
+    </div>
+    <div class="stat">
+      <p class="stat-num" data-target="9.04" data-decimals="2">0.00</p>
+      <p class="stat-label">CGPA · B.E. CSE, MIT</p>
+    </div>
+    <div class="stat">
+      <p class="stat-num" data-target="97.3" data-suffix="%">0%</p>
+      <p class="stat-label">Higher secondary score</p>
+    </div>
+    <div class="stat">
+      <p class="stat-num" data-target="4" data-suffix="+">0+</p>
+      <p class="stat-label">Featured projects</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2 class="section-title"><span class="num">03.</span> Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <h3>Languages</h3>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+          <li>C</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Web Technologies</h3>
+        <ul>
+          <li>HTML / CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>AI / ML &amp; Libraries</h3>
+        <ul>
+          <li>PyTorch · NumPy · Pandas</li>
+          <li>YOLOv5 · ResNet50</li>
+          <li>PatchTST · Transformers</li>
+          <li>LLMs · Time-Series</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Databases &amp; Tools</h3>
+        <ul>
+          <li>MySQL · MongoDB</li>
+          <li>Git · Google Colab</li>
+          <li>Jira · Excel</li>
+          <li>Figma · VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2 class="section-title"><span class="num">04.</span> Experience &amp; Education</h2>
+    <div class="timeline">
+      <article class="job reveal">
+        <div class="job-head">
+          <h3>Associate Technology Consultant · <span class="company">Perficient</span></h3>
+          <span class="job-period">2026 — Present</span>
+        </div>
+        <ul class="job-points">
+          <li>Part of the Global Graduate Training Program (GGTP) and the production development team.</li>
+          </ul>
+      </article>
+      <article class="job reveal">
+        <div class="job-head">
+          <h3>B.E. Computer Science &amp; Engineering · <span class="company">MIT, Anna University</span></h3>
+          <span class="job-period">Oct 2022 — Apr 2026</span>
+        </div>
+        <ul class="job-points">
+          <li>CGPA: 9.04</li>
+        </ul>
+      </article>
+      <article class="job reveal">
+        <div class="job-head">
+          <h3>Higher Secondary · <span class="company">St. Marks Matriculation Hr. Sec. School</span></h3>
+          <span class="job-period">2021 — 2022</span>
+        </div>
+        <ul class="job-points">
+          <li>Scored 97.3%</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section">
+    <h2 class="section-title"><span class="num">05.</span> Achievements</h2>
+    <p class="section-sub">A few wins and roles that stood out along the way.</p>
+    <div class="award-grid">
+      <div class="award-card reveal">
+        <span class="award-tag">Presentation</span>
+        <h3>Winner — Paper Presentation</h3>
+        <p>"Voice-Activated News Reader" — best talk at the event.</p>
+      </div>
+      <div class="award-card reveal">
+        <span class="award-tag">Mapathon</span>
+        <h3>Winner — IIT Bombay FOSSEE · AAI Geospatial Mapathon</h3>
+        <p>Winner of the geospatial mapathon organized by IIT Bombay FOSSEE and AAI.</p>
+      </div>
+      <div class="award-card reveal">
+        <span class="award-tag">Competition</span>
+        <h3>Winner — Detective SQL</h3>
+        <p>Winner of the technical event for detective-style SQL problem solving.</p>
+      </div>
+      <div class="award-card reveal">
+        <span class="award-tag">Leadership</span>
+        <h3>Organizer — Data Maze &amp; Full Stack Workshop</h3>
+        <p>Planned and ran a tech event and a full-stack development workshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section">
+    <h2 class="section-title"><span class="num">06.</span> Certifications</h2>
+    <p class="section-sub">Courses completed to go deeper outside the classroom.</p>
+    <div class="award-grid">
+      <div class="award-card reveal">
+        <span class="award-tag">MyCaptain</span>
+        <h3>Web Development</h3>
+        <p>Hands-on web development bootcamp covering HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="award-card reveal">
+        <span class="award-tag">Naan Mudhalvan</span>
+        <h3>AI Tools</h3>
+        <p>Practical course on modern AI tools and their applications.</p>
+      </div>
+      <div class="award-card reveal">
+        <span class="award-tag">Coursera</span>
+        <h3>WordPress</h3>
+        <p>Building and managing sites with WordPress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2 class="section-title center"><span class="num">07.</span> Get In Touch</h2>
+    <h3 class="contact-big">Want to build something together?</h3>
+    <p class="contact-text">
+      My inbox is always open — whether you have a question, a project, or just
+      want to say hi. I'll get back to you as soon as I can.
+    </p>
+    <a class="btn btn-primary" href="mailto:sruthiganesh05@gmail.com">sruthiganesh05@gmail.com</a>
+    <p class="contact-resume"><a class="btn" href="resume.pdf" download>⬇ Download Resume</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Sruthi G · Built with plain HTML, CSS &amp; a little JS</p>
+    <div class="footer-links">
+      <a href="https://github.com/Sruthi1605" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/sruthi-g-430406265/" target="_blank">LinkedIn</a>
+      <a href="https://leetcode.com/u/srug_05/" target="_blank">LeetCode</a>
+    </div>
+    <p class="email">sruthiganesh05@gmail.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

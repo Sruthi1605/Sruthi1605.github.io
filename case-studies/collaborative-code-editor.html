@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaborative Code Editor · Case Study · Sruthi G</title>
+  <meta name="description" content="Case study: a real-time multi-user code editor with WebSocket sync and Monaco Editor highlighting." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <canvas id="cursor-trail" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <header class="nav">
+    <a class="nav-logo" href="../index.html">SG<span class="accent">.</span></a>
+    <nav class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact" class="btn btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cs-hero">
+    <a class="cs-back" href="../index.html#projects">← Back to portfolio</a>
+    <h1 class="cs-title">Collaborative Code Editor</h1>
+    <p class="cs-sub">
+      A real-time, multi-user code editor where participants see each
+      other's changes live — powered by WebSocket synchronization.
+    </p>
+    <div class="cs-meta">
+      <span class="cs-tag">Full-Stack</span>
+      <span>2024</span>
+      <span>Real-Time Systems</span>
+    </div>
+    <ul class="cs-stack">
+      <li>Java</li>
+      <li>JavaScript</li>
+      <li>WebSocket</li>
+      <li>Monaco Editor</li>
+    </ul>
+  </section>
+
+  <div class="cs-content">
+    <section class="cs-section reveal">
+      <h2><span class="num">01.</span> Overview</h2>
+      <p>
+        Pair programming and team debugging become painful when the editor
+        isn't shared. This project builds a web-based code editor where
+        multiple users edit the same file at the same time, with every change
+        mirrored across sessions.
+      </p>
+      <div class="cs-fact">
+        "The interesting engineering wasn't the editor — it was making a
+        professional editing experience that felt effortless even as updates
+        streamed in from other users."
+      </div>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">02.</span> The Problem</h2>
+      <ul>
+        <li>Collaborating on code usually means screenshare or copy-paste — clunky and error-prone.</li>
+        <li>The interface had to feel professional enough that users trust it for real work.</li>
+        <li>Live edits from others must land smoothly without breaking the local typing experience.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">03.</span> My Role &amp; Approach</h2>
+      <ul>
+        <li>Designed and developed the frontend interface for the collaborative editor.</li>
+        <li>Integrated <strong>Monaco Editor</strong> (the engine behind VS Code) to bring professional code editing with syntax highlighting.</li>
+        <li>Built the interface components and widgets that support the collaborative workflow.</li>
+        <li>Focused on usability so the UI stays smooth while <strong>WebSocket</strong> synchronizes edits between users in real time.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">04.</span> Key Challenges</h2>
+      <ul>
+        <li><strong>Live updates:</strong> keeping the UI responsive while remote edits arrive continuously.</li>
+        <li><strong>Editor integration:</strong> wiring a feature-rich third-party editor cleanly into the app.</li>
+        <li><strong>UX:</strong> making multi-user presence feel natural instead of overwhelming.</li>
+      </ul>
+    </section>
+
+    <section class="cs-section reveal">
+      <h2><span class="num">05.</span> Results &amp; Impact</h2>
+      <ul>
+        <li>A polished, professional editing interface with real-time collaboration over WebSocket.</li>
+        <li>Hands-on experience in frontend development, UI design, and integrating third-party libraries.</li>
+        <li>A foundation that can grow into richer features like cursor presence, chat, and versioning.</li>
+      </ul>
+    </section>
+
+    <div class="cs-cta">
+      <h3>Want the details?</h3>
+      <p>Happy to walk through the sync design and architecture in a call or email.</p>
+      <div class="cs-cta-links">
+        <a class="btn btn-primary" href="https://github.com/Sruthi1605/Collaborative-Code-Editor">View Code on GitHub ↗</a>
+        <a class="btn" href="mailto:sruthiganesh05@gmail.com">sruthiganesh05@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Sruthi G · <a href="../index.html">Back to portfolio</a></p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
