@@ -55,55 +55,26 @@
     <section class="cs-section reveal">
       <h2><span class="num">01.</span> Overview</h2>
       <p>
-        Encrypted messages still look suspicious — an intercepted ciphertext
-        is an obvious "something is hidden here" signal. Steganography solves
-        that by hiding the secret in plain sight.
+        A tool that encrypts a message with <strong>AES</strong> and hides it
+        inside an image using <strong>LSB steganography</strong> — the recipient
+        extracts and decrypts it. On the outside, it's just a picture.
       </p>
-      <p>
-        I built a tool where a user encrypts a message and hides it inside an
-        image; the recipient extracts and decrypts it. On the outside, it's
-        just a picture.
-      </p>
-      <div class="cs-fact">
-        "Cryptography protects the message if it's found. Steganography tries
-        to make sure it's never found at all."
-      </div>
     </section>
 
     <section class="cs-section reveal">
-      <h2><span class="num">02.</span> The Problem</h2>
+      <h2><span class="num">02.</span> My Role</h2>
       <ul>
-        <li>Visible ciphertext invites interception and blocking.</li>
-        <li>Sending secrets over chat apps leaves traces on the wire and on servers.</li>
-        <li>A practical secure channel should look completely ordinary.</li>
+        <li>Encrypted messages with <strong>AES</strong> before embedding.</li>
+        <li>Used <strong>LSB steganography</strong> to hide the encrypted bytes in pixel data with minimal visual change.</li>
+        <li>Built the interface to encrypt/hide and extract/decrypt.</li>
       </ul>
     </section>
 
     <section class="cs-section reveal">
-      <h2><span class="num">03.</span> My Role &amp; Approach</h2>
-      <ul>
-        <li>Encrypted the message with <strong>AES</strong> before hiding it, so the embedded data is already unreadable.</li>
-        <li>Used <strong>LSB (Least Significant Bit) steganography</strong> to embed the encrypted bytes into pixel data with minimal visual change to the image.</li>
-        <li>Built the user interface so anyone can pick a message, upload a carrier image, and get a hidden image to share.</li>
-        <li>Implemented the decoder to extract and decrypt the message back to its original text.</li>
-      </ul>
-    </section>
-
-    <section class="cs-section reveal">
-      <h2><span class="num">04.</span> Key Challenges</h2>
-      <ul>
-        <li><strong>Capacity vs. invisibility:</strong> more hidden bits means more distortion — balanced payload size against detectable artifacts.</li>
-        <li><strong>Integrity:</strong> ensured hidden data survives image encoding/decoding without corruption.</li>
-        <li><strong>UX:</strong> wrapped a crypto + stego pipeline in a clean interface a non-technical user can operate.</li>
-      </ul>
-    </section>
-
-    <section class="cs-section reveal">
-      <h2><span class="num">05.</span> Results &amp; Impact</h2>
+      <h2><span class="num">03.</span> Results</h2>
       <ul>
         <li>End-to-end secure messaging: encrypt → hide → share → extract → decrypt.</li>
-        <li>Owned the frontend interface plus the AES encryption and image-embedding implementation.</li>
-        <li>A practical taste of building security features into a real application.</li>
+        <li>Practical experience building security features into a real app.</li>
       </ul>
     </section>
 
