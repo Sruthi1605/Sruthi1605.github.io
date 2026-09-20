@@ -657,6 +657,71 @@ html[data-theme='light'] .bulb .base {
   margin-bottom: 1rem;
 }
 
+.about-facts {
+  list-style: none;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.25rem;
+}
+
+.about-facts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.about-facts li:last-child {
+  border-bottom: none;
+}
+
+.about-facts span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.about-facts strong {
+  color: var(--text);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* ---------- Stack chips ---------- */
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  max-width: 720px;
+}
+
+.chip {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.honors-sub {
+  margin: 2.5rem 0 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--muted);
+}
+
 .tech-list {
   list-style: none;
   display: grid;
