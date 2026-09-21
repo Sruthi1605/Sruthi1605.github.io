@@ -11,6 +11,33 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+const spyLinks = [...document.querySelectorAll('.nav-links > a[href^="#"]:not(.btn)')];
+const spySections = spyLinks
+  .map((a) => document.querySelector(a.getAttribute('href')))
+  .filter(Boolean);
+
+function onSpy() {
+  const probe = window.scrollY + 180;
+  let current = '';
+  for (const sec of spySections) {
+    const top = sec.getBoundingClientRect().top + window.scrollY;
+    if (top <= probe) current = sec.id;
+  }
+  spyLinks.forEach((a) => {
+    const on = a.getAttribute('href') === '#' + current;
+    a.classList.toggle('active', on);
+    if (on) {
+      a.setAttribute('aria-current', 'true');
+    } else {
+      a.removeAttribute('aria-current');
+    }
+  });
+}
+
+window.addEventListener('scroll', onSpy, { passive: true });
+window.addEventListener('resize', onSpy, { passive: true });
+onSpy();
+
 const progress = document.querySelector('#scrollProgress');
 
 function onProgress() {
@@ -204,5 +231,22 @@ if (toTop) {
   toTop.addEventListener('click', () => {
     const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+  });
+}
+
+const profileCard = document.querySelector('.profile-card');
+
+if (profileCard && !reduceMotion) {
+  profileCard.addEventListener('mousemove', (e) => {
+    const r = profileCard.getBoundingClientRect();
+    const rx = ((e.clientY - r.top) / r.height - 0.5) * -8;
+    const ry = ((e.clientX - r.left) / r.width - 0.5) * 8;
+    profileCard.style.transition = 'transform 0.12s ease-out';
+    profileCard.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-2px)`;
+  });
+
+  profileCard.addEventListener('mouseleave', () => {
+    profileCard.style.transition = 'transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1)';
+    profileCard.style.transform = '';
   });
 }

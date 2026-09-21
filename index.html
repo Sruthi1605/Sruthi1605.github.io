@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sruthi G · Associate Technical Consultant</title>
-  <meta name="description" content="Portfolio of Sruthi G, Associate Technology Consultant at Perficient." />
+  <meta name="description" content="Portfolio of Sruthi G, Associate Technical Consultant at Perficient." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +18,12 @@
   </script>
 </head>
 <body>
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora-blob a1"></span>
+    <span class="aurora-blob a2"></span>
+    <span class="aurora-blob a3"></span>
+    <div class="aurora-grid"></div>
+  </div>
   <div class="scroll-progress" id="scrollProgress"></div>
   <header class="nav">
     <a class="nav-logo" href="#home">SG<span class="accent">.</span></a>
@@ -46,7 +52,7 @@
     <h2 class="hero-tagline">Java · Python · Web Development</h2>
     <p class="hero-desc">
       I'm an <strong>Associate Technical Consultant at Perficient</strong>,
-      working on the <strong>product development team</strong>. I completed my
+      working on the <strong>Product Development team</strong>. I completed my
       B.E. in Computer Science at MIT, Anna University, and I'm passionate about
       building reliable applications and AI-driven solutions that solve
       meaningful problems.
@@ -118,6 +124,26 @@
     </p>
 
     <article class="project-card reveal">
+      <div class="project-thumb">
+        <div class="thumb-bar"><span></span><span></span><span></span><em>sepsis-early-warning</em></div>
+        <div class="thumb-body">
+          <svg viewBox="0 0 480 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chart preview">
+            <defs>
+              <linearGradient id="gSep" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" style="stop-color:var(--accent)"/>
+                <stop offset="100%" style="stop-color:var(--accent-2)"/>
+              </linearGradient>
+            </defs>
+            <path d="M20 82 L70 72 L120 78 L180 58 L240 64 L300 38 L360 22 L420 32 L470 12" fill="none" stroke="url(#gSep)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M240 64 L300 38 L360 22" fill="none" stroke="#ffb04d" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4" opacity=".9"/>
+            <circle cx="360" cy="22" r="5" fill="#ffb04d"/>
+            <circle cx="360" cy="22" r="11" fill="none" stroke="#ffb04d" stroke-width="1.5" opacity=".5"/>
+            <text x="20" y="22" style="fill:var(--muted)" font-family="monospace" font-size="10">RISK</text>
+            <rect x="385" y="14" width="58" height="18" rx="9" style="fill:rgba(255,176,77,0.18)"/>
+            <text x="409" y="27" style="fill:#ffb04d" font-family="monospace" font-size="10" text-anchor="middle">HIGH</text>
+          </svg>
+        </div>
+      </div>
       <div class="project-meta">
         <span class="project-tag">Featured · AI Research</span>
         <span class="project-year">2026</span>
@@ -134,12 +160,35 @@
         <li>Time-Series Modeling</li>
         <li>LLM</li>
       </ul>
+      <ul class="project-stats">
+        <li>MoE dual-expert</li>
+        <li>LLM explanations</li>
+        <li>Multivariate time-series</li>
+      </ul>
       <div class="project-links">
         <a href="case-studies/sepsis-early-warning.html" aria-label="Case study">Case Study →</a>
       </div>
     </article>
 
     <article class="project-card reveal">
+      <div class="project-thumb">
+        <div class="thumb-bar"><span></span><span></span><span></span><em>fall-detection</em></div>
+        <div class="thumb-body">
+          <svg viewBox="0 0 480 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Video frame preview">
+            <path d="M150 84 l56 -18 6 14 -58 20 z" style="fill:var(--accent-2)" opacity=".35"/>
+            <circle cx="176" cy="34" r="8" style="fill:var(--accent)"/>
+            <path d="M176 44 l-14 22 M176 44 l18 18 M176 48 l-6 18 M176 48 l10 16" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+            <rect x="128" y="10" width="96" height="78" rx="6" fill="none" stroke="var(--border)" stroke-width="2"/>
+            <circle cx="128" cy="88" r="4" style="fill:#28c840"/>
+            <text x="322" y="40" style="fill:var(--muted)" font-family="monospace" font-size="10">CAM_01 · RGB</text>
+            <rect x="296" y="54" width="120" height="10" rx="5" style="fill:var(--border)" opacity=".7"/>
+            <rect x="296" y="54" width="84" height="10" rx="5" style="fill:#28c840"/>
+            <text x="356" y="66" style="fill:#28c840" font-family="monospace" font-size="8" text-anchor="middle">87%</text>
+            <rect x="340" y="14" width="62" height="18" rx="9" style="fill:rgba(255,176,77,0.18)"/>
+            <text x="371" y="27" style="fill:#ffb04d" font-family="monospace" font-size="10" text-anchor="middle">FALL</text>
+          </svg>
+        </div>
+      </div>
       <div class="project-meta">
         <span class="project-tag">Featured · Deep Learning</span>
         <span class="project-year">2025</span>
@@ -156,12 +205,39 @@
         <li>YOLOv5</li>
         <li>ResNet50</li>
       </ul>
+      <ul class="project-stats">
+        <li>87% accuracy · LE2I</li>
+        <li>3 severity classes</li>
+        <li>YOLOv5 + ResNet50</li>
+      </ul>
       <div class="project-links">
         <a href="case-studies/fall-detection.html" aria-label="Case study">Case Study →</a>
       </div>
     </article>
 
     <article class="project-card reveal">
+      <div class="project-thumb">
+        <div class="thumb-bar"><span></span><span></span><span></span><em>collab-editor</em></div>
+        <div class="thumb-body">
+          <svg viewBox="0 0 480 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Code editor preview">
+            <rect x="0" y="0" width="34" height="100" style="fill:var(--bg-alt)" opacity=".85"/>
+            <text x="10" y="20" style="fill:var(--muted)" font-family="monospace" font-size="8">1</text>
+            <text x="10" y="36" style="fill:var(--muted)" font-family="monospace" font-size="8">2</text>
+            <text x="10" y="52" style="fill:var(--muted)" font-family="monospace" font-size="8">3</text>
+            <text x="10" y="68" style="fill:var(--muted)" font-family="monospace" font-size="8">4</text>
+            <text x="10" y="84" style="fill:var(--muted)" font-family="monospace" font-size="8">5</text>
+            <rect x="46" y="14" width="96" height="9" rx="4.5" style="fill:var(--accent)"/>
+            <rect x="46" y="30" width="150" height="9" rx="4.5" style="fill:var(--muted)" opacity=".6"/>
+            <rect x="46" y="46" width="118" height="9" rx="4.5" style="fill:var(--accent-2)"/>
+            <rect x="46" y="62" width="170" height="9" rx="4.5" style="fill:var(--muted)" opacity=".45"/>
+            <rect x="46" y="78" width="82" height="9" rx="4.5" style="fill:var(--accent)" opacity=".8"/>
+            <rect x="352" y="60" width="96" height="26" rx="6" style="fill:var(--border)" opacity=".5"/>
+            <circle cx="370" cy="73" r="7" style="fill:var(--accent)"/>
+            <rect x="382" y="69" width="54" height="8" rx="4" style="fill:var(--muted)" opacity=".7"/>
+            <text x="371" y="77" style="fill:var(--bg)" font-family="monospace" font-size="9" text-anchor="middle">&#9679;</text>
+          </svg>
+        </div>
+      </div>
       <div class="project-meta">
         <span class="project-tag">Full-Stack</span>
         <span class="project-year">2024</span>
@@ -177,6 +253,11 @@
         <li>WebSocket</li>
         <li>Monaco Editor</li>
       </ul>
+      <ul class="project-stats">
+        <li>Real-time sync</li>
+        <li>Monaco-powered</li>
+        <li>Multi-user sessions</li>
+      </ul>
       <div class="project-links">
         <a href="https://github.com/Sruthi1605/Collaborative-Code-Editor" aria-label="View source on GitHub">GitHub</a>
         <a href="case-studies/collaborative-code-editor.html" aria-label="Case study">Case Study →</a>
@@ -184,6 +265,29 @@
     </article>
 
     <article class="project-card reveal">
+      <div class="project-thumb">
+        <div class="thumb-bar"><span></span><span></span><span></span><em>stegno-tool</em></div>
+        <div class="thumb-body">
+          <svg viewBox="0 0 480 100" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Steganography preview">
+            <rect x="150" y="20" width="180" height="60" rx="6" style="fill:var(--panel)"/>
+            <rect x="158" y="28" width="164" height="44" rx="3" style="fill:var(--bg-alt)" opacity=".5"/>
+            <g fill="var(--border)">
+              <rect x="162" y="32" width="10" height="10"/><rect x="176" y="32" width="10" height="10"/><rect x="190" y="32" width="10" height="10"/><rect x="162" y="46" width="10" height="10"/><rect x="176" y="46" width="10" height="10"/><rect x="190" y="46" width="10" height="10"/><rect x="162" y="60" width="10" height="10"/><rect x="176" y="60" width="10" height="10"/><rect x="190" y="60" width="10" height="10"/>
+              <rect x="262" y="32" width="10" height="10"/><rect x="276" y="32" width="10" height="10"/><rect x="290" y="32" width="10" height="10"/><rect x="262" y="46" width="10" height="10"/><rect x="276" y="46" width="10" height="10"/><rect x="290" y="46" width="10" height="10"/><rect x="262" y="60" width="10" height="10"/><rect x="276" y="60" width="10" height="10"/><rect x="290" y="60" width="10" height="10"/>
+              <rect x="206" y="32" width="10" height="10"/><rect x="220" y="32" width="10" height="10"/><rect x="234" y="32" width="10" height="10"/><rect x="206" y="46" width="10" height="10"/><rect x="234" y="60" width="10" height="10"/>
+            </g>
+            <rect x="206" y="46" width="10" height="10" style="fill:var(--accent)"/>
+            <rect x="234" y="46" width="10" height="10" style="fill:var(--accent)"/>
+            <rect x="248" y="60" width="10" height="10" style="fill:var(--accent-2)"/>
+            <rect x="220" y="60" width="10" height="10" style="fill:#ffb04d"/>
+            <rect x="206" y="60" width="10" height="10" style="fill:var(--accent)" opacity=".7"/>
+            <circle cx="366" cy="70" r="13" style="fill:rgba(92,225,230,0.14)"/>
+            <circle cx="366" cy="70" r="9" style="fill:var(--accent)"/>
+            <path d="M366 64 a6 6 0 0 1 6 6 v5 M366 64 a-6 6 0 0 0 -6 6 v5 h12 v-5 z" style="fill:var(--bg)"/>
+            <text x="366" y="30" style="fill:var(--muted)" font-family="monospace" font-size="10" text-anchor="middle">AES · LSB</text>
+          </svg>
+        </div>
+      </div>
       <div class="project-meta">
         <span class="project-tag">Security</span>
         <span class="project-year">2024</span>
@@ -199,6 +303,11 @@
         <li>LSB Steganography</li>
         <li>HTML / CSS</li>
       </ul>
+      <ul class="project-stats">
+        <li>AES encryption</li>
+        <li>LSB embedding</li>
+        <li>Image-based hiding</li>
+      </ul>
       <div class="project-links">
         <a href="https://github.com/Sruthi1605/Steganography-Tool" aria-label="View source on GitHub">GitHub</a>
         <a href="case-studies/secure-messaging.html" aria-label="Case study">Case Study →</a>
@@ -211,25 +320,53 @@
   <!-- STACK -->
   <section id="stack" class="section">
     <h2 class="section-title"><span class="num">03.</span> Stack</h2>
-    <p class="section-sub">Tools and technologies I reach for most.</p>
-    <div class="stack-chips">
-      <span class="chip">Python</span>
-      <span class="chip">Java</span>
-      <span class="chip">JavaScript</span>
-      <span class="chip">React</span>
-      <span class="chip">SQL</span>
-      <span class="chip">MySQL</span>
-      <span class="chip">MongoDB</span>
-      <span class="chip">PyTorch</span>
-      <span class="chip">NumPy</span>
-      <span class="chip">Pandas</span>
-      <span class="chip">YOLOv5</span>
-      <span class="chip">ResNet50</span>
-      <span class="chip">PatchTST</span>
-      <span class="chip">Git</span>
-      <span class="chip">Jira</span>
-      <span class="chip">Figma</span>
-      <span class="chip">VS Code</span>
+    <p class="section-sub">Tools and technologies I reach for most, grouped by area.</p>
+    <div class="stack-groups">
+      <div class="stack-group">
+        <h3>Languages</h3>
+        <div class="stack-group-chips">
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">C</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>Web Technologies</h3>
+        <div class="stack-group-chips">
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>AI / ML</h3>
+        <div class="stack-group-chips">
+          <span class="chip">PyTorch</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">YOLOv5</span>
+          <span class="chip">ResNet50</span>
+          <span class="chip">PatchTST</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>Databases</h3>
+        <div class="stack-group-chips">
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>Tools &amp; Platforms</h3>
+        <div class="stack-group-chips">
+          <span class="chip">Git</span>
+          <span class="chip">Google Colab</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">Jira</span>
+          <span class="chip">Figma</span>
+        </div>
+      </div>
     </div>
   </section>
 
